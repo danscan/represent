@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 import Vantage from 'vantage'
-import banner from '../assets/banner'
+import fs from 'fs'
 
-// Interactive CLI
+// Log banner locally on start
+import banner from './.assets/banner'
+console.log(banner)
+
+// Interactive CLI & Server
 const vantage = Vantage()
   .delimiter('∫>')
   .banner(banner)
-  .listen(8000)
+  // !!!: Don't need this yet.
+  // .listen(8000)
   .show()
 
 
