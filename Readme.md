@@ -7,6 +7,9 @@
 ```
 Declarative infrastructure without imperative transactions.
 
+## WARNING:
+This hasn't yet graduated from experimental nonsense.  Pay no attention to it at all.
+
 ## Premise
 ```
 components
