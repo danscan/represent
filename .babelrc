@@ -21,7 +21,10 @@
     "regenerator",
     "flow",
     "react",
-    "react.displayName",
+    "react.displayName"
   ],
   "sourceMaps": false,
+  "plugins": [
+    "babel-root-import",
+  ]
 }

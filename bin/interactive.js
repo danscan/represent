@@ -1,9 +1,18 @@
 #!/usr/bin/env node
 import Vantage from 'vantage'
-import fs from 'fs'
+
+// Assert process.cwd() is a project before continuing
+import assertCwdIsProject from './utils/assertCwdIsProject'
+assertCwdIsProject()
+
+// Utils
+import createFileFromTemplate from './utils/createFileFromTemplate'
+
+// Templates
+import typeTemplate from './templates/type'
 
 // Log banner locally on start
-import banner from './.assets/banner'
+import banner from './assets/banner'
 console.log(banner)
 
 // Interactive CLI & Server
@@ -13,7 +22,6 @@ const vantage = Vantage()
   // !!!: Don't need this yet.
   // .listen(8000)
   .show()
-
 
 /* -
  * Command Definitions
@@ -37,28 +45,12 @@ vantage
   .command('add type [type]')
   .description('Adds a new type.')
   .action(args => {
-    console.log('Add type:', args.type)
-    return Promise.resolve(args.type)
+    return createFileFromTemplate(args, typeTemplate)
+      .then(
+        () => console.log(`Added type "${args.type}"`)
+      )
   })
 
 /**
- * Add Schema
+ * TODO: Add Route
  */
-vantage
-  .command('add schema [schema]')
-  .description('Adds a new schema.')
-  .action(args => {
-    console.log('Add schema:', args.schema)
-    return Promise.resolve(args.schema)
-  })
-
-/**
- * Add Component
- */
-vantage
-  .command('add component [component]')
-  .description('Adds a new component.')
-  .action(args => {
-    console.log('Add component:', args.component)
-    return Promise.resolve(args.component)
-  })
