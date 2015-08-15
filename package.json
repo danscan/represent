@@ -1,7 +1,7 @@
 {
   "name": "represent",
   "version": "0.0.1",
-  "description": "Declarative infrastructure without imperative transactions.",
+  "description": "Declarative cross-platform infrastructure without imperative transactions.",
   "main": "index.js",
   "bin": {
     "represent": "bin/interactive.js"
