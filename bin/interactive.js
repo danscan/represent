@@ -31,7 +31,7 @@ const vantage = Vantage()
  * Init Project
  */
 vantage
-  .command('init [project]')
+  .command('init <project>')
   .description('Creates a new represent project.')
   .action(args => {
     console.log('Init project:', args.project)
@@ -42,7 +42,7 @@ vantage
  * Add Type
  */
 vantage
-  .command('add type [type]')
+  .command('add type <type>')
   .description('Adds a new type.')
   .action(args => {
     return createFileFromTemplate(args, typeTemplate)
