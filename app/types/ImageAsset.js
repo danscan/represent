@@ -1,4 +1,4 @@
-class ImageAsset extends Represent.Type {
+export default class ImageAsset extends Represent.Type {
   static schema = {
     // The image asset uri
     uri: { 

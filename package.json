@@ -7,6 +7,7 @@
     "represent": "bin/interactive.js"
   },
   "scripts": {
+    "start": "babel-node lib/server",
     "interactive": "babel-node bin/interactive",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +17,12 @@
     "babel": "^5.8.21",
     "babel-relay-plugin": "^0.1.2",
     "babel-root-import": "^1.0.0",
+    "express": "^4.13.3",
     "graphql": "^0.4.2",
     "graphql-relay": "^0.3.0",
+    "i": "^0.3.3",
+    "require-directory": "^2.1.1",
+    "underscore": "^1.8.3",
     "vantage": "^1.3.5",
     "waterline": "^0.10.26"
   },

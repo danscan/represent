@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 import Vantage from 'vantage'
+import banner from '../lib/assets/banner'
+import server from '../lib/server'
 
 // Assert process.cwd() is a project before continuing
-import assertCwdIsProject from './utils/assertCwdIsProject'
+import assertCwdIsProject from '../lib/server/utils/assertCwdIsProject'
 assertCwdIsProject()
 
 // Utils
@@ -11,16 +13,12 @@ import createFileFromTemplate from './utils/createFileFromTemplate'
 // Templates
 import typeTemplate from './templates/type'
 
-// Log banner locally on start
-import banner from './assets/banner'
-console.log(banner)
-
 // Interactive CLI & Server
+const port = process.env['PORT'] || 8000
 const vantage = Vantage()
   .delimiter('∫>')
   .banner(banner)
-  // !!!: Don't need this yet.
-  // .listen(8000)
+  // .listen(server, port)
   .show()
 
 /* -

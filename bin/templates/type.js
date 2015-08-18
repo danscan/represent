@@ -4,7 +4,7 @@ export default args => {
   return {
     location: `app/types/${type}.js`,
     contents: (
-`class ${type} extends Represent.Type {
+`export default class ${type} extends Represent.Type {
   static schema = {
     // Define your schema here...
   }

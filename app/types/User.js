@@ -2,21 +2,21 @@ const {
   connectionFromType,
 } = Represent
 
-class User extends Represent.Type {
+export default class User extends Represent.Type {
   static schema = {
     // The user's avatar image
     avatar: {
-      type: ImageAsset,
+      type: 'ImageAsset',
     },
 
     // The likes from the user
-    likes: connectionFromType(Like),
+    likes: connectionFromType('Like'),
 
     // The user's friends (users the user follows)
-    friends: connectionFromType(User),
+    friends: connectionFromType('User'),
 
     // The users who follow the user
-    followers: connectionFromType(User),
+    followers: connectionFromType('User'),
 
     // Ther user's name
     name: {
@@ -35,7 +35,7 @@ class User extends Represent.Type {
     },
 
     // The posts from the user
-    posts: connectionFromType(Post),
+    posts: connectionFromType('Post'),
   }
 
   static typeName = 'User'
