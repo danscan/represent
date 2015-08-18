@@ -1,5 +1,6 @@
 const {
   connectionFromType,
+  listConnectionFromType,
 } = Represent
 
 export default class Post extends Represent.Type {
@@ -13,7 +14,7 @@ export default class Post extends Represent.Type {
     },
 
     // The likes to the post (? should be a list connection?)
-    likes: connectionFromType('Like'),
+    likes: listConnectionFromType('Like'),
 
     // The user who created (owns) the post
     owner: connectionFromType('User'),

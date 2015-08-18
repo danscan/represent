@@ -1,5 +1,5 @@
 const {
-  connectionFromType,
+  listConnectionFromType,
 } = Represent
 
 export default class User extends Represent.Type {
@@ -10,13 +10,13 @@ export default class User extends Represent.Type {
     },
 
     // The likes from the user
-    likes: connectionFromType('Like'),
+    likes: listConnectionFromType('Like'),
 
     // The user's friends (users the user follows)
-    friends: connectionFromType('User'),
+    friends: listConnectionFromType('User'),
 
     // The users who follow the user
-    followers: connectionFromType('User'),
+    followers: listConnectionFromType('User'),
 
     // Ther user's name
     name: {
@@ -35,7 +35,7 @@ export default class User extends Represent.Type {
     },
 
     // The posts from the user
-    posts: connectionFromType('Post'),
+    posts: listConnectionFromType('Post'),
   }
 
   static typeName = 'User'
